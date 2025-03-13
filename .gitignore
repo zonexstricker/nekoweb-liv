@@ -1,0 +1,13 @@
+# Ignore all archive files
+*.zip
+*.tar
+*.gz
+*.bz2
+*.xz
+*.rar
+*.7z
+*.tgz
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.z
