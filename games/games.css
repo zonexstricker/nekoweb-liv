@@ -1,0 +1,234 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the body to fill the entire screen and center content */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(
+    0deg,
+    rgba(23, 24, 24, 1) 0%,
+    rgba(70, 67, 58, 1) 100%
+  );
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    color:floralwhite;
+}
+
+a{
+    color:floralwhite;
+    text-decoration: none;
+}
+
+/* Top box styling */
+#top-box {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.4px);
+  -webkit-backdrop-filter: blur(10.4px);
+  border: 3px solid rgba(0, 0, 0, 0.29);
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Middle box styling */
+#middle-box {
+    background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.4px);
+  -webkit-backdrop-filter: blur(10.4px);
+  border: 3px solid rgba(0, 0, 0, 0.29);
+  margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 500px; /* Fixed width for the 3x3 grid */
+    height: 500px; /* Fixed height for the 3x3 grid */
+    padding: 20px;
+}
+
+/* Individual game box styling */
+.games {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.36);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+transition: transform 0.2s ease; /* Smooth transition for scaling */
+}
+
+/* Logo image styling */
+.games .logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.logo{
+    border: #666;
+    border-radius: 15px;
+    border-width: 3px;
+}
+
+/* Description text styling */
+.games .description {
+    font-size: 1rem;
+}
+
+.games:hover{
+    transform: scale(1.1); /* Enlarge the game window by 10% */
+    z-index: 1; /* Bring the hovered game to the front */
+}
+
+/* Bottom box styling */
+#bottom-box {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+#bottom-box a {
+    border: 0;
+    background-color: #f3f3f3;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0%, #f3f3f3),
+      color-stop(50%, #dddddd),
+      color-stop(50%, #d2d2d2),
+      color-stop(100%, #dfdfdf)
+    );
+    background-image: -webkit-linear-gradient(
+      top,
+      #f3f3f3 0%,
+      #dddddd 50%,
+      #d2d2d2 50%,
+      #dfdfdf 100%
+    );
+    background-image: -moz-linear-gradient(
+      top,
+      #f3f3f3 0%,
+      #dddddd 50%,
+      #d2d2d2 50%,
+      #dfdfdf 100%
+    );
+    background-image: -ms-linear-gradient(
+      top,
+      #f3f3f3 0%,
+      #dddddd 50%,
+      #d2d2d2 50%,
+      #dfdfdf 100%
+    );
+    background-image: -o-linear-gradient(
+      top,
+      #f3f3f3 0%,
+      #dddddd 50%,
+      #d2d2d2 50%,
+      #dfdfdf 100%
+    );
+    background-image: linear-gradient(
+      top,
+      #f3f3f3 0%,
+      #dddddd 50%,
+      #d2d2d2 50%,
+      #dfdfdf 100%
+    );
+    border-bottom: 1px solid #b4b4b4;
+    border-right: 1px solid #dfdfdf;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5,
+      0 -1px 2px 1px #efefef;
+    -moz-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5,
+      0 -1px 2px 1px #efefef;
+    box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
+    color: #666;
+    font: bold 16px "helvetica neue", helvetica, arial, sans-serif;
+    margin: 0;
+    padding: 9px;
+    text-shadow: 0 1px 1px #fff;
+    width: 150px;
+  }
+  #bottom-box a:hover {
+    background-color: #e5e5e5;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0%, #e5e5e5),
+      color-stop(50%, #d1d1d1),
+      color-stop(50%, #c4c4c4),
+      color-stop(100%, #b8b8b8)
+    );
+    background-image: -webkit-linear-gradient(
+      top,
+      #e5e5e5 0%,
+      #d1d1d1 50%,
+      #c4c4c4 50%,
+      #b8b8b8 100%
+    );
+    background-image: -moz-linear-gradient(
+      top,
+      #e5e5e5 0%,
+      #d1d1d1 50%,
+      #c4c4c4 50%,
+      #b8b8b8 100%
+    );
+    background-image: -ms-linear-gradient(
+      top,
+      #e5e5e5 0%,
+      #d1d1d1 50%,
+      #c4c4c4 50%,
+      #b8b8b8 100%
+    );
+    background-image: -o-linear-gradient(
+      top,
+      #e5e5e5 0%,
+      #d1d1d1 50%,
+      #c4c4c4 50%,
+      #b8b8b8 100%
+    );
+    background-image: linear-gradient(
+      top,
+      #e5e5e5 0%,
+      #d1d1d1 50%,
+      #c4c4c4 50%,
+      #b8b8b8 100%
+    );
+    -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9,
+      0 -1px 2px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9,
+      0 -1px 2px 1px #e3e3e3;
+    box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9, 0 -1px 2px 1px #e3e3e3;
+    cursor: pointer;
+  }
+  #bottom-box a:active {
+    -webkit-box-shadow: inset 0 0 30px 0 #999999,
+      0 1px 0 0 rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }

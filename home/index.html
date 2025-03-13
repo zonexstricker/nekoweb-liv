@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🏠️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home/home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-box">
+        <div class="logo"><img src=../images/logo.webp></div>
+
+        <div class="nav-bar">
+          <ul>
+            <li><a href="../">Back</a></li>
+            <li><a href="../blog">Blog</a></li>
+            <li><a href="../music">Music</a></li>
+            <li><a href="../movies">Movies</a></li>
+            <li><a href="../tv">TV</a></li>
+            <li><a href="../games">Games</a></li>
+          </ul>
+        </div>
+
+        <div class="title-text">
+          <h1>Liv Site</h1>
+          <h2>Web-home of Liv</h2>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <h1>You're here!</h1>
+        <p>Im so happy you made it <i class="nf nf-fa-heart"></i> ! Use the navigation bar above to go to different areas of my site, or stick here and see what things I shoved on the front page.</p>
+        <p>Currently I have the games section completed, which you can access using the handy nav bar at the top! However, most of the games are empty atm.</p>
+      </div>
+
+      <div class="right-box">
+
+
+        <div class="music">
+          <div class="musicimage">
+            <img id="album-cover" src="" style="width: 150px; height:150px; border-radius: 8px;">
+           </div>
+           <div class="musictext">
+            <h3 id="listen" style="font-size:50%">🟢</h3>
+            <h2 id="song-title">Loading...</h2>
+            <p id="artist"></p>
+           </div>
+           <a style="color:#E31B23; font-size:30px;"href="https://www.last.fm/user/ololololivia"><i class="nf nf-fa-lastfm_square"></i></a>
+        </div>
+  
+        <script>
+          // Wrap your existing code in a function
+          function fetchRecentTrack() {
+            const url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ololololivia&api_key=07a97e27a9c41337215af1e603c16424&format=json";
+        
+            fetch(url)
+              .then(response => response.json())
+              .then(data => {
+                const track = data.recenttracks.track[0];
+                const artist = track.artist["#text"];
+                const song = track["name"];
+                const artwork = track.image[3]["#text"];
+                const link = track["url"];
+                const fallbackArt = "../images/vinyl.png";
+        
+                const artworkElement = document.getElementById("album-cover");
+                if (artwork) {
+                  artworkElement.setAttribute("src", artwork);
+                } else {
+                  artworkElement.setAttribute("src", fallbackArt);
+                }
+        
+                const trackElement = document.getElementById("song-title");
+                trackElement.innerHTML = song;
+        
+                const artistElement = document.getElementById("artist");
+                artistElement.innerHTML = artist;
+        
+                const listenElement = document.getElementById("listen");
+                if (track["@attr"] !== undefined) {
+                  listenElement.innerHTML = '🟢';
+                } else {
+                  listenElement.innerHTML = '🔴';
+                }
+              })
+              .catch(error => console.error("Error fetching data:", error));
+          }
+        
+          // Run the function immediately when the DOM is loaded
+          document.addEventListener("DOMContentLoaded", function () {
+            fetchRecentTrack(); // Run once immediately
+            setInterval(fetchRecentTrack, 10000); // Run every 10 seconds
+          });
+        </script>
+      </div>
+
+      <div class="left-box">
+        <h2>Here is my badge, please hotlink!</h2>
+        <a href="https://olivia.nekoweb.org/"><img src="https://olivia.nekoweb.org/images/badge.png"></a>
+        <textarea readonly=""><a href="https://olivia.nekoweb.org/"><img src="https://olivia.nekoweb.org/images/badge.png"></a></a></textarea>
+        <iframe width="200" height="200" style="border:none" src="https://rice.nekoweb.org/nekolink.html"></iframe>
+      </div>
+
+      <div class="footnote"><p>feetnote</p></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'BigBlueTermPlus Nerd Font';
+  src: url('/font/BigBlueTermPlusNF.woff2') format('woff2'),
+      url('/font/BigBlueTermPlusNF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body{
+  font-family: 'BigBlueTermPlus Nerd Font';
+  font-weight: normal;
+  font-style: normal;
+  color:floralwhite;
+}
+
+
+/*
+This box styling is a modified version of this
+codepen snippet https://codepen.io/enbee81/pen/wvdMJGp
+*/
+
+.box {
+    margin: 1rem auto;
+    max-width: 70ch;
+    border: 8px solid #455283;
+    padding: 2ch;
+    position: relative;
+    border-image: 
+      url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%230038FF'/%3E%3C/svg%3E")
+      8 stretch;
+  }
+
+
+
+body{
+  background: black;
+}
+
+
+a{
+    color:mediumaquamarine
+}
+
+h1{
+    text-align: center;
+}
+
+.footnote{
+    font-size: 80%;
+    text-align: center;
+}
+
+.links{
+    text-align:center;
+    font-size: 300%;
+}
+
+.box {
+    background-image: url("/images/space.gif");
+  }
+
+.enter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badges{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+ul {
+  list-style-type:none;
+  text-align: center;
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+/* 🤓
+The stuff below was generated using https://grid.layoutit.com/ .
+I reccomend people use that instead of copying this so you can more
+easily edit it, but I don't mind if you lift it and change it yourself!
+*/
+
+.container {  display: grid;
+  grid-template-columns: 0.6fr 1.8fr 0.6fr;
+  grid-template-rows: 1.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". box .";
+}
+
+.box {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 2.1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "box-top box-top box-top"
+    "box-centre box-centre box-centre"
+    "box-bottom box-bottom box-bottom";
+  grid-area: box;
+}
+
+.box-bottom {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". enter ."
+    "badges badges badges"
+    "footnote footnote footnote";
+  grid-area: box-bottom;
+}
+
+.enter { grid-area: enter; }
+
+.badges { grid-area: badges; }
+
+.footnote { grid-area: footnote; }
+
+.box-top {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". title ."
+    ". title ."
+    ". title .";
+  grid-area: box-top;
+}
+
+.title { grid-area: title; }
+
+.box-centre { grid-area: box-centre; }
