@@ -55,7 +55,7 @@ body {
     background-color: #1a0f03;
     /* you can delete the line below if you'd prefer to not use an image */
     background-size: 100vw;
-    color: #fceaff;
+    color: #fff8ea;
     background-image: var(--body-bg-image);
 }
 
