@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>🎮️/half-life/new-game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../new-game/new-game.css" />
+</head>
+
+<body>
+    <div class="window-controls">
+        <div class="window-control">
+            <p>_</p>
+        </div>
+        <div class="window-control">
+            <p>X</p>
+        </div>
+    </div>
+
+    <div style="margin-left:40px;">
+
+        <div class="big-option">
+            <p>New Game</p>
+        </div>
+
+        <div class="menu">
+            <div class="option"><a href="#" id="open-gallery"><u>I</u>mages</a></div>
+            <div class="option"><a href="../"><u>D</u>one</a></div>
+        </div>
+    </div>
+
+<div class="box">
+    <p>I first played the orignal half life in 2019 when it was on a sale. I enjoyed it but only because I had played Half-Life 2 previously.</p>
+    <p>At the time I didn't really apreciate the massive innovations it made to the first person shooter genre, essentially rocket jumping story-driven FPS into the mainstream for gamers.</p>
+    <p>Playing it now and taking time to appreciate what it brought to the table is a fantastic experience. I never played it all the way through my first time, which I regret. I would've appreciated it beyond its novelty of being the game before HL2.</p>
+    <p>I first played Half-Life 2 on the XBOX 360 Orange Box port. It ran very well on the console, but as a kid a lot of the physics puzzles and story went over my head.</p>
+    <p>Half-Life as a series is something I hold very dearly. If it wasn't for Half-Life half the games I have ever played just would not exist. Not to mention the knock-on effect Half-Life had on the FPS genre, games many people tout as the best games ever are story-driven FPS games.</p>
+    <p>I played through Half-Life 2 to it's completion in 2019 after I had tried out Half-Life 1. It was fantastic, to this day I cannot believe how a game from 2004 can outclass games made 8 years later in graphics, story, physics engine and gameplay. It is truly a masterpiece of a game, and should be in every FPS players game library.</p>
+    <p>I also played through Half-Life Alyx in 2019 - as you can see I had quite the hyperfixation at the time - and I have yet to this day found a better VR game. It's worth even buying an index and only using it for HL:A.</p>
+</div>
+
+ <div id="image-viewer" class="image-viewer">
+    <span class="close">&times;</span>
+    <img class="main-image" src="" alt="Fullscreen Image" width="80%">
+    <div class="controls">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+    </div>
+    <div class="preview-bar">
+        <!-- Preview thumbnails will be dynamically inserted here -->
+    </div>
+</div>
+
+<script>
+    // JavaScript for the image viewer
+    document.addEventListener('DOMContentLoaded', function () {
+        const openGalleryBtn = document.getElementById('open-gallery');
+        const viewer = document.getElementById('image-viewer');
+        const mainImage = viewer.querySelector('.main-image');
+        const closeBtn = viewer.querySelector('.close');
+        const prevBtn = viewer.querySelector('.prev');
+        const nextBtn = viewer.querySelector('.next');
+        const previewBar = viewer.querySelector('.preview-bar');
+
+        let currentImageIndex = 0;
+        const images = [
+            'Halflife_ingame.jpg',
+            'halflife2.jpg',
+            'alyx.jpg'
+        ];
+
+        // Open viewer when "Images" is clicked
+        openGalleryBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            currentImageIndex = 0;
+            updateViewer();
+            viewer.style.display = 'flex';
+        });
+
+        // Close viewer
+        closeBtn.addEventListener('click', function () {
+            viewer.style.display = 'none';
+        });
+
+        // Navigate to previous image
+        prevBtn.addEventListener('click', function () {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateViewer();
+        });
+
+        // Navigate to next image
+        nextBtn.addEventListener('click', function () {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateViewer();
+        });
+
+        // Update the viewer with the current image and previews
+        function updateViewer() {
+            mainImage.src = images[currentImageIndex];
+            updatePreviews();
+        }
+
+        // Update preview thumbnails
+        function updatePreviews() {
+            previewBar.innerHTML = '';
+            images.forEach((image, index) => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.classList.toggle('active', index === currentImageIndex);
+                img.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateViewer();
+                });
+                previewBar.appendChild(img);
+            });
+        }
+    });
+</script>
+
+</body>

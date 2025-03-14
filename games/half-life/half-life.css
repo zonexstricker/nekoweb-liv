@@ -1,15 +1,53 @@
 body {
   background: url("../../images/half-life-bgrnd.jpg");
   background-size: cover;
+  font-family:'Alte DIN 1451 Mittelschrift';
+  font-weight: bold;
 }
 
-.controls{
+.large-text {
+  animation: shake 1s infinite, glow 2s infinite;
+}
+
+.small-text{
+  animation: soft-shake 1s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-20px); }
+  50% { transform: translateX(20px); }
+  75% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes soft-shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(9px); }
+  50% { transform: translateX(-10px); }
+  75% { transform: translateX(11px); }
+  100% { transform: translateX(0); }
+}
+
+.window-controls{
     color: orange;
     display: flex;
     justify-content: flex-end;
 }
 
-.control{
+.window-control{
     border-width: 4px;
     border-color: gray;
     border-style: solid;
@@ -24,23 +62,28 @@ body {
 }
 
 .large-text {
-    font-size: 48px;
+    font-size: 80px;
     color: rgba(255, 255, 255, 0.3);
     position: absolute;
     z-index: 1;
     margin: 0;
     padding: 0;
-    top:5px;
+    top:-30px;
 }
 
 .small-text {
-    font-size: 24px;
+    font-size: 40px;
     position: absolute;
     z-index: 2;
     color: #ffffff;
     margin: 0;
     padding: 0;
 }
+
+.menu{
+  margin-top: 120px;
+}
+
 
 .menu-option {
   display: flex;
@@ -51,14 +94,25 @@ body {
 }
 
 .option {
-  font-size: 24px; /* Larger font size for the header */
+  font-size: 30px; /* Larger font size for the header */
   font-weight: bold;
   flex: 1; /* Allow the header to take up space */
   color: orange;
 }
 
-.description {
-  font-size: 16px; /* Smaller font size for the content */
-  flex: 2; /* Allow the content to take up more space */
-  color: #ffffff; /* Optional: lighter color for the content */
+.option a:hover{
+  color: rgb(255, 191, 0);
+  text-shadow: 0 0 20px rgba(255, 170, 0, 0.934);
 }
+
+.option a{
+  color: orange;
+  text-decoration: none;
+}
+
+.description {
+  font-size: 20px; /* Smaller font size for the content */
+  flex: 2; /* Allow the content to take up more space */
+  color: #606060; /* Optional: lighter color for the content */
+}
+
