@@ -3,6 +3,8 @@ body {
   background-size: cover;
   font-family: 'AlteDIN1451Mittelschrift';
   font-family:'Alte DIN 1451 Mittelschrift';
+  src: url('/font/AlteDIN1451Mittelschrift.woff2') format('woff2'),
+      url('/font/AlteDIN1451Mittelschrift.woff') format('woff');
   font-weight: bold;
 }
 
