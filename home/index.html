@@ -6,21 +6,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../home/home.css" />
+    <link rel="stylesheet" href="/home/home.css" />
   </head>
   <body>
     <div class="container">
       <div class="top-box">
-        <div class="logo"><img src=../images/logo.webp></div>
+        <div class="logo"><img src=/images/logo.webp></div>
 
         <div class="nav-bar">
           <ul>
-            <li><a href="../">Back</a></li>
-            <li><a href="../blog">Blog</a></li>
-            <li><a href="../music">Music</a></li>
-            <li><a href="../movies">Movies</a></li>
-            <li><a href="../tv">TV</a></li>
-            <li><a href="../games">Games</a></li>
+            <li><a href="/">Back</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/music">Music</a></li>
+            <li><a href="/movies">Movies</a></li>
+            <li><a href="/tv">TV</a></li>
+            <li><a href="/games">Games</a></li>
           </ul>
         </div>
 
@@ -64,7 +64,7 @@
                 const song = track["name"];
                 const artwork = track.image[3]["#text"];
                 const link = track["url"];
-                const fallbackArt = "../images/vinyl.png";
+                const fallbackArt = "/images/vinyl.png";
         
                 const artworkElement = document.getElementById("album-cover");
                 if (artwork) {
@@ -99,7 +99,7 @@
 
       <div class="left-box">
         <h2>Here is my badge, please hotlink!</h2>
-        <a href="https://olivia.nekoweb.org/"><img src="../images/badge.gif"></a>
+        <a href="https://olivia.nekoweb.org/"><img src="/images/badge.gif"></a>
         <textarea readonly=""><a href="https://olivia.nekoweb.org/"><img src="https://olivia.nekoweb.org/images/badge.gif"></a></textarea>
         <iframe width="200" height="200" style="border:none" src="https://rice.nekoweb.org/nekolink.html"></iframe>
       </div>
