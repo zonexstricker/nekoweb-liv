@@ -1,6 +1,7 @@
 body {
   background: url("../../images/half-life-bgrnd.jpg");
   background-size: cover;
+  font-family: 'AlteDIN1451Mittelschrift';
   font-family:'Alte DIN 1451 Mittelschrift';
   font-weight: bold;
 }
