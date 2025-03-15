@@ -141,3 +141,14 @@ easily edit it, but I don't mind if you lift it and change it yourself!
 .title { grid-area: title; }
 
 .box-centre { grid-area: box-centre; }
+
+@media only screen and (max-width: 768px) {
+  .container {  display: grid;
+    grid-template-columns: 1.8fr;
+    grid-template-rows: 1.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "box";
+  }
+}
