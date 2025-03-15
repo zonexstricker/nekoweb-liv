@@ -84,6 +84,7 @@ body {
 }
 
 .nav-bar {
+  display: flex;
   margin: 5px;
   text-align: center;
   background: rgba(50, 50, 50, 0.61);
@@ -257,6 +258,18 @@ easily edit it, but I don't mind if you lift it and change it yourself!
     ". . footnote . ."
     ". . . . .";
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    all: unset;
+  }
+
+  .nav-bar a{
+    padding: 4px;
+  }
+
+}
+
 
 .main-content {
   grid-area: main-content;
