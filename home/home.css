@@ -13,17 +13,26 @@
 
 
 /*top box styles*/
-#top{
-    flex-direction: column;
+#top {
+    flex-direction: column; /* Stack title and tabs vertically */
+    align-items: flex-start; /* Align items to the left */
     border-style: solid;
 }
 
-.title{
+.title {
+    display: flex; /* Ensure this is flex */
+    flex-direction: row; /* Align logo and text horizontally */
+    align-items: center; /* Center items vertically */
     border-style: solid;
 }
 
-.tab{
+.title img {
+    margin-right: 10px; /* Add some space between the image and the text */
+}
+
+.tab {
     border-style: solid;
+    margin-top: 10px; /* Add space between title and tabs */
 }
 
 
