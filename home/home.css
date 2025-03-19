@@ -50,6 +50,12 @@ body {
     flex-direction: column;
 }
 
+@media only screen and (max-width: 768px) {
+    #middle{flex-direction: column;}
+    
+}
+
+
 /* top styles */
 
 #top {
@@ -155,6 +161,54 @@ body {
     justify-content: center;
   }
 
+#song-title{
+    font-size: 10px;
+    word-wrap: break-word;
+}
+
+/* Container for the games */
+#game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    max-width: 900px; /* Adjust based on your desired total width */
+    margin: 0 auto; /* Center the container */
+}
+
+.game-row{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.games{
+    flex: 1;
+    border: #646464;
+    border-style: dotted;
+    background-color: #00000022;
+    margin: 5px;
+    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 10px;
+  }
+
+  .games{
+    text-decoration: none;
+    color: white;
+  }
+
+.logo{
+    width:40px;
+}
+
+.description h3{
+    font-size: 13px;
+    margin: 0px;
+}
+
 /* bottom styles */
 
 .footnote {
@@ -167,4 +221,86 @@ body {
     border: 3px solid rgba(0, 0, 0, 0.29);
     margin: 10px;
     padding: 10px;
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+    .tab-content{
+        width: 80vw;
+    }
+
+    .container {
+        padding: 0; /* Remove padding for mobile */
+        margin: 0; /* Remove margin for mobile */
+    }
+
+    #middle {
+        flex-direction: column;
+        align-items: center; /* Center flexboxes on mobile */
+    }
+
+    #top{
+        width:80vw;
+    }
+
+    .title img {
+        width: 30vw; /* Adjusted for mobile */
+    }
+
+    .side-bar {
+        width: 80vw; /* Adjusted for mobile */
+    }
+
+    .game-row{
+        flex-direction: column;
+    }
+
+    .games {
+        flex: 1 1 100%; /* Adjusted for mobile */
+    }
+
+    .tab button {
+        padding: 10px 20px; /* Adjusted for mobile */
+        font-size: 14px; /* Adjusted for mobile */
+    }
+
+    .music {
+        flex-direction: column; /* Adjusted for mobile */
+        text-align: center;
+    }
+
+    .musicimage img {
+        width: 100px; /* Adjusted for mobile */
+        height: 100px; /* Adjusted for mobile */
+    }
+
+    .musictext {
+        text-align: center;
+    }
+
+    .footnote {
+        text-align: center;
+    }
+
+    /* Reorder #Welcome, #Games, and sidebars */
+    #middle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Welcome {
+        order: 2; /* Move #Welcome to the middle */
+    }
+
+    #Games {
+        order: 1; /* Move #Games to the top */
+    }
+
+    #left-side-bar {
+        order: 4; /* Move left sidebar to the bottom */
+    }
+
+    #right-side-bar {
+        order: 3; /* Move right sidebar to the bottom */
+    }
 }
