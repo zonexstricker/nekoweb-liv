@@ -1,0 +1,54 @@
+/* flex stuff */
+.container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row{
+    display:flex
+}
+
+
+
+/*top box styles*/
+#top{
+    flex-direction: column;
+    border-style: solid;
+}
+
+.title{
+    border-style: solid;
+}
+
+.tab{
+    border-style: solid;
+}
+
+
+
+/*middle box styles*/
+#middle{
+    flex-direction: row;
+    border-style: solid;
+}
+.tab-content{
+    display: none;
+    border-style: solid;
+}
+.side-bar{
+    border-style: solid;
+}
+
+
+
+/*bottom box styles*/
+#bottom{
+    flex-direction: column;
+    border-style: solid;
+}
+
+.footnote{
+    border-style: solid;
+}

@@ -8,4 +8,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/home/home.css" />
+    <script src="/home/tab.js"></script>
   </head>
+    <body onload="openTab(event, 'Welcome')">
+    <div class="container">
+
+      <div class="flex-row" id="top">
+
+        <div class="title">
+          <h1>Top Flex Row Title</h1>
+        </div>
+
+        <div class="tab">
+          <button class="tablinks active" onclick="openTab(event, 'Welcome')">Welcome</button>
+          <button class="tablinks active" onclick="openTab(event, 'Games')">Games</button>
+        </div>
+
+      </div>
+
+      <div class="flex-row" id="middle">
+
+        <div class="side-bar" id="left-side-bar">
+          <p>Left box</p>
+        </div>
+
+        <div class="tab-content" id="Welcome">
+          <p>Welcome</p>
+        </div>
+
+        <div class="tab-content" id="Games">
+          <p>Games</p>
+        </div>
+
+        <div class="side-bar" id="right-side-bar">
+          <p>Right box</p>
+        </div>
+
+      </div>
+
+      <div class="flex-row" id="bottom">
+
+        <div class="footnote">
+          <p>Footnote</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
