@@ -1,63 +1,120 @@
+/* regular styles */
+body {
+    font-family: "Nunito", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: floralwhite;
+}
+
+body {
+    background: rgb(23, 24, 24);
+    background: linear-gradient(0deg,
+            rgba(23, 24, 24, 1) 0%,
+            rgba(70, 67, 58, 1) 100%);
+    background-attachment: fixed;
+}
+
 /* flex stuff */
-.container{
+.container {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.flex-row{
-    display:flex
+.flex-row {
+    display: flex;
 }
 
-
-
-/*top box styles*/
 #top {
-    flex-direction: column; /* Stack title and tabs vertically */
-    align-items: flex-start; /* Align items to the left */
-    border-style: solid;
+    flex-direction: column;
+    /* Stack title and tabs vertically */
+    align-items: flex-start;
+    /* Align items to the left */
+    max-width: 50vw;
 }
 
 .title {
-    display: flex; /* Ensure this is flex */
-    flex-direction: row; /* Align logo and text horizontally */
-    align-items: center; /* Center items vertically */
-    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#middle {
+    flex-direction: row;
+    max-width: 60vw;
+}
+
+#bottom {
+    flex-direction: column;
+}
+
+/* top styles */
+
+#top {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
 }
 
 .title img {
-    margin-right: 10px; /* Add some space between the image and the text */
+    margin-right: 10px;
+    /* Add some space between the image and the text */
+    width: 10vw;
 }
 
 .tab {
-    border-style: solid;
-    margin-top: 10px; /* Add space between title and tabs */
+    margin-top: 10px;
+    /* Add space between title and tabs */
 }
-
-
 
 /*middle box styles*/
-#middle{
-    flex-direction: row;
-    border-style: solid;
-}
-.tab-content{
+
+.tab-content {
     display: none;
-    border-style: solid;
-}
-.side-bar{
-    border-style: solid;
 }
 
-
-
-/*bottom box styles*/
-#bottom{
-    flex-direction: column;
-    border-style: solid;
+.tab-content {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
 }
 
-.footnote{
-    border-style: solid;
+.side-bar {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
+    width: 80vh;
+}
+
+/* bottom styles */
+
+.footnote {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
 }
