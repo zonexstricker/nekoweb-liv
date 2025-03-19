@@ -1,156 +1,316 @@
-@font-face {
-  font-family: 'BigBlueTermPlus Nerd Font';
-  src: url('/font/BigBlueTermPlusNF.woff2') format('woff2'),
-      url('/font/BigBlueTermPlusNF.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+/* regular styles */
+body {
+    font-family: "Nunito", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: floralwhite;
 }
 
-body{
-  font-family: 'BigBlueTermPlus Nerd Font';
-  font-weight: normal;
-  font-style: normal;
-  color:floralwhite;
+body {
+    background: rgb(23, 24, 24);
+    background: linear-gradient(0deg,
+            rgba(23, 24, 24, 1) 0%,
+            rgba(70, 67, 58, 1) 100%);
+    background-attachment: fixed;
 }
 
-
-/*
-This box styling is a modified version of this
-codepen snippet https://codepen.io/enbee81/pen/wvdMJGp
-*/
-
-.box {
-    margin: 1rem auto;
-    max-width: 70ch;
-    border: 8px solid #455283;
-    padding: 2ch;
-    position: relative;
-    border-image: 
-      url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%230038FF'/%3E%3C/svg%3E")
-      8 stretch;
-  }
-
-
-
-body{
-  background: black;
-}
-
-
-a{
-    color:mediumaquamarine
-}
-
-h1{
-    text-align: center;
-}
-
-.footnote{
-    font-size: 80%;
-    text-align: center;
-}
-
-.links{
-    text-align:center;
-    font-size: 300%;
-}
-
-.box {
-    background-image: url("/images/space.gif");
-  }
-
-.enter{
+/* flex stuff */
+.container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.badges{
+.flex-row {
     display: flex;
-    justify-content: center;
-    align-items: center; 
 }
 
-ul {
-  list-style-type:none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+#top {
+    flex-direction: column;
+    /* Stack title and tabs vertically */
+    align-items: flex-start;
+    /* Align items to the left */
 }
 
-li {
-  margin-bottom: 2px;
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-/* 🤓
-The stuff below was generated using https://grid.layoutit.com/ .
-I reccomend people use that instead of copying this so you can more
-easily edit it, but I don't mind if you lift it and change it yourself!
-*/
-
-.container {  display: grid;
-  grid-template-columns: 0.6fr 1.8fr 0.6fr;
-  grid-template-rows: 1.2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". box .";
+#middle {
+    flex-direction: row;
+    max-width: 60vw;
 }
 
-.box {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 2.1fr 0.5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "box-top box-top box-top"
-    "box-centre box-centre box-centre"
-    "box-bottom box-bottom box-bottom";
-  grid-area: box;
+#bottom {
+    flex-direction: column;
 }
-
-.box-bottom {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1.5fr 1fr 0.5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". enter ."
-    "badges badges badges"
-    "footnote footnote footnote";
-  grid-area: box-bottom;
-}
-
-.enter { grid-area: enter; }
-
-.badges { grid-area: badges; }
-
-.footnote { grid-area: footnote; }
-
-.box-top {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". title ."
-    ". title ."
-    ". title .";
-  grid-area: box-top;
-}
-
-.title { grid-area: title; }
-
-.box-centre { grid-area: box-centre; }
 
 @media only screen and (max-width: 768px) {
-  .container {  display: grid;
-    grid-template-columns: 1.8fr;
-    grid-template-rows: 1.2fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "box";
+    #middle{flex-direction: column;}
+    
+}
+
+
+/* top styles */
+
+#top {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Style the tab */
+.tab {
+    display: flex;
+    width: 100%;
+}
+
+.tab button {
+    flex: 1;
+    cursor: pointer;
+    padding: 12px 26px;
+    border: 0;
+    font-size: 16px;
+    transition: all 150ms ease-in-out;
+
+    border-radius: 14px;
+    font-weight: 600;
+
+    color: #fff;
+    background-color: transparent;
+    background-image: radial-gradient(50% 115% at 50% -5%, rgba(255, 255, 255, 0.11) 0%, transparent 100%);
+    box-shadow: inset 0 0px 10px 0px rgba(255, 255, 255, 0.14), inset 0px 5px 10px 0px rgba(255, 255, 255, 0.11), inset 0px 2px 5px 0px rgba(255, 255, 255, 0.4), inset 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.tab button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab button:active {
+    transform: scale(.95);
+}
+
+
+
+
+
+
+.title img {
+    margin-right: 10px;
+    /* Add some space between the image and the text */
+    border-style: solid;
+    border-color: #646464;
+    border-width: 4px;
+    border-radius: 8px;
+    width: 6vw;
+}
+
+.tab {
+    margin-top: 10px;
+    /* Add space between title and tabs */
+}
+
+/*middle box styles*/
+
+.tab-content {
+    display: none;
+    width: 1200px;
+}
+
+.tab-content {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
+}
+
+.side-bar {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
+    width: 800px;
+}
+
+.music {
+    background: rgba(50, 50, 50, 0.61);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(50, 50, 50, 0.3);
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+#song-title{
+    font-size: 10px;
+    word-wrap: break-word;
+}
+
+/* Container for the games */
+#game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    max-width: 900px; /* Adjust based on your desired total width */
+    margin: 0 auto; /* Center the container */
+}
+
+.game-row{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.games{
+    flex: 1;
+    border: #646464;
+    border-style: dotted;
+    background-color: #00000022;
+    margin: 5px;
+    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+    padding: 10px;
+  }
+
+  .games{
+    text-decoration: none;
+    color: white;
+  }
+
+.logo{
+    width:40px;
+}
+
+.description h3{
+    font-size: 13px;
+    margin: 0px;
+}
+
+#About{
+    text-align: center;
+}
+
+#About a{
+    text-align: center;
+    color:rgb(190, 252, 255);
+}
+
+/* bottom styles */
+
+.footnote {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+    .tab-content{
+        width: 80vw;
+    }
+
+    .container {
+        padding: 0; /* Remove padding for mobile */
+        margin: 0; /* Remove margin for mobile */
+    }
+
+    #middle {
+        flex-direction: column;
+        align-items: center; /* Center flexboxes on mobile */
+    }
+
+
+    .title img {
+        width: 30vw; /* Adjusted for mobile */
+    }
+
+    .side-bar {
+        width: 80vw; /* Adjusted for mobile */
+    }
+
+    .game-row{
+        flex-direction: column;
+    }
+
+    .games {
+        flex: 1 1 100%; /* Adjusted for mobile */
+    }
+
+    .tab button {
+        padding: 10px 20px; /* Adjusted for mobile */
+        font-size: 14px; /* Adjusted for mobile */
+    }
+
+    .music {
+        flex-direction: column; /* Adjusted for mobile */
+        text-align: center;
+    }
+
+    .musicimage img {
+        width: 100px; /* Adjusted for mobile */
+        height: 100px; /* Adjusted for mobile */
+    }
+
+    .musictext {
+        text-align: center;
+    }
+
+    .footnote {
+        text-align: center;
+    }
+
+    /* Reorder #Welcome, #Games, and sidebars */
+    #middle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #Welcome {
+        order: 2; /* Move #Welcome to the middle */
+    }
+
+    #Games {
+        order: 1; /* Move #Games to the top */
+    }
+
+    #left-side-bar {
+        order: 4; /* Move left sidebar to the bottom */
+    }
+
+    #right-side-bar {
+        order: 3; /* Move right sidebar to the bottom */
+    }
 }
