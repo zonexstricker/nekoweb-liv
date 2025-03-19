@@ -15,6 +15,14 @@ body {
     background-attachment: fixed;
 }
 
+h1{
+    text-align: center;
+}
+
+a{
+    color: lightblue;
+}
+
 /* flex stuff */
 .container {
     display: flex;
@@ -152,6 +160,21 @@ body {
     width: 800px;
 }
 
+#left-side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#right-side-bar{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .music {
     background: rgba(50, 50, 50, 0.61);
     border-radius: 16px;
@@ -159,10 +182,11 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(50, 50, 50, 0.3);
-    gap: 10px;
+    gap: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
 
 #song-title{
