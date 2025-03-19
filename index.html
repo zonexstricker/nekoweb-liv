@@ -1,55 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title>
-    <link rel="preload" href="/font/BigBlueTermPlusNF.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css">
+    <title>livsite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/tab.js"></script>
   </head>
-  <body>
-<div class="container">
-  <div class="box">
-    <div class="box-top">
+    <body onload="openTab(event, 'Welcome')">
+    <div class="container">
 
-      <div class="title">
-        <h1>Welcome to Liv site!</h1>
+      <div class="flex-row" id="top">
+
+        <div class="title">
+          <img src=/images/logo.webp>
+          <h1>Liv site</h1>
+        </div>
+
+        <div class="tab">
+          <button class="tablinks active" onclick="openTab(event, 'Welcome')">Welcome</button>
+          <button class="tablinks active" onclick="openTab(event, 'Games')">Games</button>
+          <button class="tablinks active" onclick="openTab(event, 'About')">About</button>
+        </div>
+
       </div>
 
-    </div>
+      <div class="flex-row" id="middle">
 
-    <div class="box-centre">
-        <p>This is a small personal site im making to package social media links and to have a small blog.</p>
-        <p>Here you will see me talk about music, games, movies and tv shows that I enjoy!</p>
-        <p>Before you dive in further, the most important things to know about me are:</p>
-        <ul>
-            <li>🇬🇧</li>
-            <li>I am 19</li>
-            <li>I enjoy coding small programs , scripts 󱆃 and websites </li>
-            <li>I make jewellery</li>
-            <li>I am a linux enthusiast</li>
-            <li>I have a lovely girlfriend! Her name is Alex and she lives in 🇮🇪</li>
-            <li>One day I hope to move to 🇮🇪</li>
-        </ul>
-    </div>
+        <div class="side-bar" id="left-side-bar">
+          <h2>Here is my badge, please hotlink!</h2>
+        <a href="https://olivia.nekoweb.org/"><img src="/images/badge.gif"></a>
+        <textarea readonly=""><a href="https://olivia.nekoweb.org/"><img src="https://olivia.nekoweb.org/images/badge.gif"></a></textarea>
+        <iframe width="200" height="200" style="border:none" src="https://rice.nekoweb.org/nekolink.html"></iframe>
+        </div>
 
-    <div class="box-bottom">
-
-        <div class="enter"><a href=/home><img src="images/enter.gif"></a></div>
-
-      <div class="footnote">
-        <p>Best viewed on <a href="https://firefox.com"><img src="images/firefox.gif"></a></p>
+        <div class="tab-content" id="Welcome">
+          <h1>You're here!</h1>
+          <p>This is a small personal site im making to package social media links and to have a small blog.</p>
+          <p>Here you will see me talk about music, games, movies and tv shows that I enjoy!</p>  
+          <p>Use the navigation bar above to go to different areas of my site, or stick here and see what things I shoved on the front page.</p>
+        <p>This page is a heavy WIP at the moment! I have completed the Half-Life and TF2 sections in games, if you want to check those out, use the nav bar at the top.</p>
       </div>
+
+        <div class="tab-content" id="Games">
+          
+
+          <div id="game-container">
+
+            <div class="game-row">
+            <a href="/games/tf2" class="games">
+                <img src="/images/tf2.png" alt="Team Fortress 2 Logo" class="logo">
+                <div class="description"><h3>Team Fortress 2</h3></div>
+            </a>
       
-      <div class="badges">
-        <img src="images/badge-drunk.gif">
-        <img src="images/dilbert.gif">
-        <img src="images/bestonpc.gif">
-        <img src="images/queercoded.png">
+            <a href="/games/half-life" class="games">
+              <img src="/images/half-life.svg" alt="Half-Life Logo" class="logo">
+              <div class="description"><h3>Half-Life</h3></div>
+          </a>
+          <a href="/games/pvz" class="games">
+            <img src="/images/pvz.png" alt="Plants Vs Zombies Logo" class="logo" style="filter:grayscale(1)">
+            <div class="description"><h3 style="color: grey;">Plants Vs Zombies</h3></div>
+        </a>
+          </div>
+
+          <div class="game-row">
+            <a href="/games/minecraft" class="games">
+              <img src="/images/minecraft.svg" alt="Minecraft Logo" class="logo" style="filter:grayscale(1)">
+              <div class="description"><h3 style="color: grey;">Minecraft</h3></div>
+          </a>
+          <a href="/games/dontstarve" class="games">
+              <img src="/images/dst.webp" alt="Don't Starve Logo" class="logo" style="filter:grayscale(1)">
+              <div class="description"><h3 style="color: grey;">Don't Starve</h3></div>
+          </a>
+          </div>
+
+
+
+        </div>
+
+
+        </div>
+
+        <div class="tab-content" id="About">
+            <p>I am British and I am 19.</p>
+            <p>I enjoy coding small programs <i class="nf nf-seti-c_sharp"></i>, scripts <i class="nf nf-md-bash"></i> and websites <i class="nf nf-fa-html5"></i>. I also make jewellery that I sell on vinted.</p>
+            <p>I am a linux enthusiast <i class="nf nf-md-linux"></i> .</p>
+            <p>I have a lovely girlfriend! Her name is Alex and she lives in Ireland. One day I hope to move to Ireland.</p>
+            <p>Check out my girlfriends portfolio website! I helped design it and code it: <a href="https://mangofolio.nekoweb.org">mangofolio</a></p>
+        </div>
+
+        <div class="side-bar" id="right-side-bar">
+          <div class="music">
+            <div class="musicimage">
+              <img id="album-cover" src="" style="width: 150px; height:150px; border-radius: 8px;">
+             </div>
+             <div class="musictext">
+              <h3 id="listen" style="font-size:50%">🟢</h3>
+              <h2 id="song-title">Loading...</h2>
+              <p id="artist"></p>
+             </div>
+          </div>
+          <a style="color:#E31B23; font-size:30px;text-align: center;"href="https://www.last.fm/user/ololololivia"><i class="nf nf-fa-lastfm_square"></i></a>
+    
+          <script>
+            // Wrap your existing code in a function
+            function fetchRecentTrack() {
+              const url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ololololivia&api_key=07a97e27a9c41337215af1e603c16424&format=json";
+          
+              fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                  const track = data.recenttracks.track[0];
+                  const artist = track.artist["#text"];
+                  const song = track["name"];
+                  const artwork = track.image[3]["#text"];
+                  const link = track["url"];
+                  const fallbackArt = "/images/vinyl.png";
+          
+                  const artworkElement = document.getElementById("album-cover");
+                  if (artwork) {
+                    artworkElement.setAttribute("src", artwork);
+                  } else {
+                    artworkElement.setAttribute("src", fallbackArt);
+                  }
+          
+                  const trackElement = document.getElementById("song-title");
+                  trackElement.innerHTML = song;
+          
+                  const artistElement = document.getElementById("artist");
+                  artistElement.innerHTML = artist;
+          
+                  const listenElement = document.getElementById("listen");
+                  if (track["@attr"] !== undefined) {
+                    listenElement.innerHTML = '🟢';
+                  } else {
+                    listenElement.innerHTML = '🔴';
+                  }
+                })
+                .catch(error => console.error("Error fetching data:", error));
+            }
+          
+            // Run the function immediately when the DOM is loaded
+            document.addEventListener("DOMContentLoaded", function () {
+              fetchRecentTrack(); // Run once immediately
+              setInterval(fetchRecentTrack, 10000); // Run every 10 seconds
+            });
+          </script>
+        </div>
+
+      </div>
+
+      <div class="flex-row" id="bottom">
+
+        <div class="footnote">
+          <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+          <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif"></a><!-- button by s1nez.nekoweb.org -->
+          <a href="https://chataigne.nekoweb.org"><img src="https://chataigne.nekoweb.org/button1.jpg"></a>
+          <a href="https://july.lol"><img src="https://july.lol/img/lonelyjulybutton.gif" alt="july.lol"></a>
+          <a href="drfred.nekoweb.org"><img src="https://drfred.nekoweb.org/collection/buttons/sites/button-drfred.png"></a>
+        </div>
+
       </div>
 
     </div>
 
-  </div>
-</div>
-</body>
+  </body>
