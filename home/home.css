@@ -32,7 +32,6 @@ body {
     /* Stack title and tabs vertically */
     align-items: flex-start;
     /* Align items to the left */
-    max-width: 50vw;
 }
 
 .title {
@@ -109,7 +108,11 @@ body {
 .title img {
     margin-right: 10px;
     /* Add some space between the image and the text */
-    width: 10vw;
+    border-style: solid;
+    border-color: #646464;
+    border-width: 4px;
+    border-radius: 8px;
+    width: 6vw;
 }
 
 .tab {
@@ -121,6 +124,7 @@ body {
 
 .tab-content {
     display: none;
+    width: 1200px;
 }
 
 .tab-content {
@@ -145,7 +149,7 @@ body {
     border: 3px solid rgba(0, 0, 0, 0.29);
     margin: 10px;
     padding: 10px;
-    width: 120vh;
+    width: 800px;
 }
 
 .music {
@@ -209,6 +213,15 @@ body {
     margin: 0px;
 }
 
+#About{
+    text-align: center;
+}
+
+#About a{
+    text-align: center;
+    color:rgb(190, 252, 255);
+}
+
 /* bottom styles */
 
 .footnote {
@@ -239,9 +252,6 @@ body {
         align-items: center; /* Center flexboxes on mobile */
     }
 
-    #top{
-        width:80vw;
-    }
 
     .title img {
         width: 30vw; /* Adjusted for mobile */
