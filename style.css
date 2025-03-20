@@ -191,6 +191,7 @@ a{
     right: 0;
     border-radius: var(--radius);
     background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+    pointer-events: none; /* Allow clicks and text selection to pass through */
   }
     margin: 10px;
     padding: 10px;
@@ -204,112 +205,116 @@ a{
 
 #left-side-bar {
     /*===== Configurable Variables =====*/
-  /*======= Only these change! =======*/
-  --color: #272727;
-  --radius: 5%;
-  --elevation: 20px;
-  --bevel: 2px;
-  --opacity: 50%;
-  --blurriness: 2px;
-  --angle: 315deg;
-  --intensity: 40;
-  --diffusion: 30;
-
-  /*======= Computed Variables =======*/
-  --sin: calc(sin(var(--angle)));
-  --cos: calc(cos(var(--angle)));
-  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
-  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
-  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
-  --edge-blur: calc(var(--bevel) * 1.5);
-  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
-
-  /*======= Computed Properties =======*/
-  border-radius: var(--radius);
-  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
-  background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
-  backdrop-filter: blur(var(--blurriness));
-      
-  /*======== Static Properties ========*/
-  background-blend-mode: soft-light;
-  position: relative;
-
-  /*====== Nested Pseudo-Element ======*/
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+    /*======= Only these change! =======*/
+    --color: #272727;
+    --radius: 5%;
+    --elevation: 20px;
+    --bevel: 2px;
+    --opacity: 50%;
+    --blurriness: 2px;
+    --angle: 315deg;
+    --intensity: 40;
+    --diffusion: 30;
+  
+    /*======= Computed Variables =======*/
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+  
+    /*======= Computed Properties =======*/
     border-radius: var(--radius);
-    background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-  }
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+      0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+      inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+      inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+      inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+      inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
+    backdrop-filter: blur(var(--blurriness));
+        
+    /*======== Static Properties ========*/
+    background-blend-mode: soft-light;
+    position: relative;
+  
+    /*====== Nested Pseudo-Element ======*/
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+      pointer-events: none; /* Allow clicks and text selection to pass through */
+    }
+  
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-#right-side-bar{
-     /*===== Configurable Variables =====*/
-  /*======= Only these change! =======*/
-  --color: #272727;
-  --radius: 5%;
-  --elevation: 20px;
-  --bevel: 2px;
-  --opacity: 50%;
-  --blurriness: 2px;
-  --angle: 225deg;
-  --intensity: 40;
-  --diffusion: 30;
-
-  /*======= Computed Variables =======*/
-  --sin: calc(sin(var(--angle)));
-  --cos: calc(cos(var(--angle)));
-  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
-  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
-  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
-  --edge-blur: calc(var(--bevel) * 1.5);
-  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
-
-  /*======= Computed Properties =======*/
-  border-radius: var(--radius);
-  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
-  background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
-  backdrop-filter: blur(var(--blurriness));
-      
-  /*======== Static Properties ========*/
-  background-blend-mode: soft-light;
-  position: relative;
-
-  /*====== Nested Pseudo-Element ======*/
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-radius: var(--radius);
-    background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
   }
+
+#right-side-bar {
+    /*===== Configurable Variables =====*/
+    /*======= Only these change! =======*/
+    --color: #272727;
+    --radius: 5%;
+    --elevation: 20px;
+    --bevel: 2px;
+    --opacity: 50%;
+    --blurriness: 2px;
+    --angle: 225deg;
+    --intensity: 40;
+    --diffusion: 30;
+  
+    /*======= Computed Variables =======*/
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+  
+    /*======= Computed Properties =======*/
+    border-radius: var(--radius);
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+      0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+      inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+      inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+      inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+      inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
+    backdrop-filter: blur(var(--blurriness));
+        
+    /*======== Static Properties ========*/
+    background-blend-mode: soft-light;
+    position: relative;
+  
+    /*====== Nested Pseudo-Element ======*/
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+      pointer-events: none; /* Allow clicks and text selection to pass through */
+    }
+  
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+  }
 
 .music {
     gap: 0px;
@@ -380,57 +385,57 @@ a{
 
 .footnote {
     /*===== Configurable Variables =====*/
-  /*======= Only these change! =======*/
-  --color: #272727;
-  --radius: 20%;
-  --elevation: 20px;
-  --bevel: 2px;
-  --opacity: 50%;
-  --blurriness: 2px;
-  --angle: 270deg;
-  --intensity: 50;
-  --diffusion: 0;
-
-  /*======= Computed Variables =======*/
-  --sin: calc(sin(var(--angle)));
-  --cos: calc(cos(var(--angle)));
-  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
-  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
-  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
-  --edge-blur: calc(var(--bevel) * 1.5);
-  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
-
-  /*======= Computed Properties =======*/
-  border-radius: var(--radius);
-  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
-  background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
-  backdrop-filter: blur(var(--blurriness));
-      
-  /*======== Static Properties ========*/
-  background-blend-mode: soft-light;
-  position: relative;
-
-  /*====== Nested Pseudo-Element ======*/
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+    /*======= Only these change! =======*/
+    --color: #272727;
+    --radius: 20%;
+    --elevation: 20px;
+    --bevel: 2px;
+    --opacity: 50%;
+    --blurriness: 2px;
+    --angle: 270deg;
+    --intensity: 50;
+    --diffusion: 0;
+  
+    /*======= Computed Variables =======*/
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+  
+    /*======= Computed Properties =======*/
     border-radius: var(--radius);
-    background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+      0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+      inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+      inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+      inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+      inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
+    backdrop-filter: blur(var(--blurriness));
+        
+    /*======== Static Properties ========*/
+    background-blend-mode: soft-light;
+    position: relative;
+  
+    /*====== Nested Pseudo-Element ======*/
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+      pointer-events: none; /* Allow clicks and text selection to pass through */
+    }
+  
+    margin: 10px;
+    padding: 10px;
   }
-    margin: 10px;
-    padding: 10px;
-    margin: 10px;
-    padding: 10px;
-}
 
 /* Mobile-specific styles */
 @media only screen and (max-width: 768px) {
