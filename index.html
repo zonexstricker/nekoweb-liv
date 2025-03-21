@@ -34,7 +34,7 @@
           <h2>Here is my badge, please hotlink!</h2>
         <a href="https://olivia.nekoweb.org/"><img src="/images/badge.gif"></a>
         <textarea readonly=""><a href="https://olivia.nekoweb.org/"><img src="https://olivia.nekoweb.org/images/badge.gif"></a></textarea>
-        <iframe width="200" height="200" style="border:none" src="https://rice.nekoweb.org/nekolink.html"></iframe>
+        <iframe width="180" height="180" class="advert" src="https://rice.nekoweb.org/nekolink.html"></iframe>
         </div>
 
         <div class="tab-content" id="Welcome">
@@ -94,18 +94,27 @@
         </div>
 
         <div class="side-bar" id="right-side-bar">
-          <div class="music">
-            <div class="musicimage">
-              <img id="album-cover" src="" style="width: 150px; height:150px; border-radius: 8px;">
-             </div>
-             <div class="musictext">
-              <h3 id="listen" style="font-size:50%">🟢</h3>
-              <h2 id="song-title">Loading...</h2>
-              <p id="artist"></p>
-             </div>
-          </div>
-          <a style="color:#E31B23; font-size:30px;text-align: center;"href="https://www.last.fm/user/ololololivia"><i class="nf nf-fa-lastfm_square"></i></a>
-    
+
+
+            <div class="ipod-background">
+              <div class="ipod-screen">
+                <div class="music">
+                <div class="musicimage">
+                  <img id="album-cover" src="" style="width: 70px; height:70px; border-style: solid; border-color: rgb(79, 79, 79); border-width: 3px;">
+                 </div>
+                 <div class="musictext">
+                  <h2 id="song-title">Loading...</h2>
+                  <h2 id="artist"></h2>
+                  <h3 id="listen" style="font-size:50%">🟢</h3>
+                 </div>
+                </div>
+              </div>
+
+                      <img src="/images/scrollwheel.svg" class="ipod-scrollwheel">
+              </div>
+
+              <a style="color:#E31B23; font-size:30px;text-align: center;"href="https://www.last.fm/user/ololololivia"><i class="nf nf-fa-lastfm_square"></i></a>
+
           <script>
             // Wrap your existing code in a function
             function fetchRecentTrack() {
