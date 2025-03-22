@@ -10,19 +10,24 @@
     <link rel="stylesheet" href="/style.css" />
     <script src="/tab.js"></script>
     <script>
-      // Load the audio file
-const audio = new Audio('start.wav');
-
-// Select all buttons on the page
-const buttons = document.querySelectorAll('button');
-
-document.addEventListener('click', () => {
-    // Play the sound
-    audio.currentTime = 0; // Reset the audio to the start
-    audio.play();
-    console.log("Page clicked! Audio is playing.");
-});
-console.log("test");
+      // Wait for the document to be fully loaded before running the code
+  document.addEventListener("DOMContentLoaded", function() {
+    // Load the audio file (ensure the path is correct)
+    const audio = new Audio('start.wav');
+    
+    // Get all elements with the class 'tablinks'
+    const tabLinks = document.querySelectorAll('.tablinks');
+    
+    // Add click event listener to each 'tablinks' element
+    tabLinks.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Play the sound when the tab is clicked
+        audio.play().catch(error => {
+          console.error("Error playing audio:", error);
+        });
+      });
+    });
+  });
     </script>
   </head>
     <body onload="openTab(event, 'Welcome')">
