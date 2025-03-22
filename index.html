@@ -135,48 +135,54 @@
               <a style="color:#E31B23; font-size:30px;text-align: center;"href="https://www.last.fm/user/ololololivia"><i class="nf nf-fa-lastfm_square"></i></a>
 
           <script>
-            // Wrap your existing code in a function
-            function fetchRecentTrack() {
-              const url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ololololivia&api_key=07a97e27a9c41337215af1e603c16424&format=json";
-          
-              fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                  const track = data.recenttracks.track[0];
-                  const artist = track.artist["#text"];
-                  const song = track["name"];
-                  const artwork = track.image[3]["#text"];
-                  const link = track["url"];
-                  const fallbackArt = "/images/vinyl.png";
-          
-                  const artworkElement = document.getElementById("album-cover");
-                  if (artwork) {
-                    artworkElement.setAttribute("src", artwork);
-                  } else {
-                    artworkElement.setAttribute("src", fallbackArt);
-                  }
-          
-                  const trackElement = document.getElementById("song-title");
-                  trackElement.innerHTML = song;
-          
-                  const artistElement = document.getElementById("artist");
-                  artistElement.innerHTML = artist;
-          
-                  const listenElement = document.getElementById("listen");
-                  if (track["@attr"] !== undefined) {
-                    listenElement.innerHTML = '🟢';
-                  } else {
-                    listenElement.innerHTML = '🔴';
-                  }
-                })
-                .catch(error => console.error("Error fetching data:", error));
+           function truncateTitle(title, maxLength) {
+    if (title.length > maxLength) {
+        return title.substring(0, maxLength-2) + '..';
+    }
+    return title;
+}
+
+function fetchRecentTrack() {
+    const url = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=ololololivia&api_key=07a97e27a9c41337215af1e603c16424&format=json";
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const track = data.recenttracks.track[0];
+            const artist = track.artist["#text"];
+            const song = track["name"];
+            const artwork = track.image[3]["#text"];
+            const link = track["url"];
+            const fallbackArt = "/images/vinyl.png";
+
+            const artworkElement = document.getElementById("album-cover");
+            if (artwork) {
+                artworkElement.setAttribute("src", artwork);
+            } else {
+                artworkElement.setAttribute("src", fallbackArt);
             }
-          
-            // Run the function immediately when the DOM is loaded
-            document.addEventListener("DOMContentLoaded", function () {
-              fetchRecentTrack(); // Run once immediately
-              setInterval(fetchRecentTrack, 10000); // Run every 10 seconds
-            });
+
+            const trackElement = document.getElementById("song-title");
+            trackElement.innerHTML = truncateTitle(song, 10);
+
+            const artistElement = document.getElementById("artist");
+            artistElement.innerHTML = truncateTitle(artist, 20);
+
+            const listenElement = document.getElementById("listen");
+            if (track["@attr"] !== undefined) {
+                listenElement.innerHTML = '🟢';
+            } else {
+                listenElement.innerHTML = '🔴';
+            }
+        })
+        .catch(error => console.error("Error fetching data:", error));
+}
+
+// Run the function immediately when the DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+    fetchRecentTrack(); // Run once immediately
+    setInterval(fetchRecentTrack, 10000); // Run every 10 seconds
+});
           </script>
 
           <h2>Find me on:</h2>
