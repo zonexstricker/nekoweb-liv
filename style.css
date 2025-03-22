@@ -423,6 +423,7 @@ a {
 
 /* Container for the games */
 #game-container {
+    margin:auto;
     background-image: url(images/bookshelf.png);
     background-size: contain;
     width: 352.8px;
@@ -623,10 +624,6 @@ a {
     #game-container {
         width: 250.24px;
         height: 443px;
-    }
-
-    .game-row{
-        
     }
 
     .games {
