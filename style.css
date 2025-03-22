@@ -1,4 +1,5 @@
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
+
 /* regular styles */
 body {
     font-family: "Nunito", sans-serif;
@@ -17,11 +18,11 @@ body {
     background-size: cover;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-a{
+a {
     color: lightblue;
 }
 
@@ -60,8 +61,10 @@ a{
 }
 
 @media only screen and (max-width: 768px) {
-    #middle{flex-direction: column;}
-    
+    #middle {
+        flex-direction: column;
+    }
+
 }
 
 
@@ -79,7 +82,7 @@ a{
     padding: 10px;*/
     background: url(/images/book-cover.jpeg);
     background-size: 100% 100%;
-    padding:10px;
+    padding: 10px;
     border-radius: 16px;
     box-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
@@ -139,17 +142,17 @@ a{
 
 /*middle box styles*/
 
-#left-side-bar textarea{
+#left-side-bar textarea {
     background: url(/images/crumple.jpg);
     background-size: cover;
-    color:rgb(21, 0, 84);
+    color: rgb(21, 0, 84);
     border-color: #272727;
     border-radius: 15px;
     border-style: solid;
     border-width: 4px;
 }
 
-.advert{
+.advert {
     margin-top: 20px;
     border-color: #272727;
     border-radius: 15px;
@@ -162,55 +165,58 @@ a{
     width: 1200px;
 }
 
-.tab-content {
+#Welcome,
+#About {
     /*===== Configurable Variables =====*/
-  /*======= Only these change! =======*/
-  --color: #272727;
-  --radius: 5%;
-  --elevation: 20px;
-  --bevel: 2px;
-  --opacity: 50%;
-  --blurriness: 2px;
-  --angle: 270deg;
-  --intensity: 50;
-  --diffusion: 20;
+    /*======= Only these change! =======*/
+    --color: #272727;
+    --radius: 5%;
+    --elevation: 20px;
+    --bevel: 2px;
+    --opacity: 50%;
+    --blurriness: 2px;
+    --angle: 270deg;
+    --intensity: 50;
+    --diffusion: 20;
 
-  /*======= Computed Variables =======*/
-  --sin: calc(sin(var(--angle)));
-  --cos: calc(cos(var(--angle)));
-  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
-  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
-  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
-  --edge-blur: calc(var(--bevel) * 1.5);
-  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+    /*======= Computed Variables =======*/
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
 
-  /*======= Computed Properties =======*/
-  border-radius: var(--radius);
-  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
-  background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
-  backdrop-filter: blur(var(--blurriness));
-      
-  /*======== Static Properties ========*/
-  background-blend-mode: soft-light;
-  position: relative;
-
-  /*====== Nested Pseudo-Element ======*/
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+    /*======= Computed Properties =======*/
     border-radius: var(--radius);
-    background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-    pointer-events: none; /* Allow clicks and text selection to pass through */
-  }
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+        0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+        inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+        inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
+    backdrop-filter: blur(var(--blurriness));
+
+    /*======== Static Properties ========*/
+    background-blend-mode: soft-light;
+    position: relative;
+
+    /*====== Nested Pseudo-Element ======*/
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: var(--radius);
+        background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+        pointer-events: none;
+        /* Allow clicks and text selection to pass through */
+    }
+
     margin: 10px;
     padding: 10px;
 }
@@ -233,7 +239,7 @@ a{
     --angle: 315deg;
     --intensity: 40;
     --diffusion: 30;
-  
+
     /*======= Computed Variables =======*/
     --sin: calc(sin(var(--angle)));
     --cos: calc(cos(var(--angle)));
@@ -242,41 +248,42 @@ a{
     --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
     --edge-blur: calc(var(--bevel) * 1.5);
     --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
-  
+
     /*======= Computed Properties =======*/
     border-radius: var(--radius);
     box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-      0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-      inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-      inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-      inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-      inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+        0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+        inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+        inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
     background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
     backdrop-filter: blur(var(--blurriness));
-        
+
     /*======== Static Properties ========*/
     background-blend-mode: soft-light;
     position: relative;
-  
+
     /*====== Nested Pseudo-Element ======*/
     &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-radius: var(--radius);
-      background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-      pointer-events: none; /* Allow clicks and text selection to pass through */
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: var(--radius);
+        background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+        pointer-events: none;
+        /* Allow clicks and text selection to pass through */
     }
-  
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
+}
 
 #right-side-bar {
     /*===== Configurable Variables =====*/
@@ -290,7 +297,7 @@ a{
     --angle: 225deg;
     --intensity: 40;
     --diffusion: 30;
-  
+
     /*======= Computed Variables =======*/
     --sin: calc(sin(var(--angle)));
     --cos: calc(cos(var(--angle)));
@@ -299,56 +306,57 @@ a{
     --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
     --edge-blur: calc(var(--bevel) * 1.5);
     --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
-  
+
     /*======= Computed Properties =======*/
     border-radius: var(--radius);
     box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-      0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-      inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-      inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-      inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-      inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+        0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+        inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+        inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
     background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
     backdrop-filter: blur(var(--blurriness));
-        
+
     /*======== Static Properties ========*/
     background-blend-mode: soft-light;
     position: relative;
-  
+
     /*====== Nested Pseudo-Element ======*/
     &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-radius: var(--radius);
-      background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-      pointer-events: none; /* Allow clicks and text selection to pass through */
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: var(--radius);
+        background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+        pointer-events: none;
+        /* Allow clicks and text selection to pass through */
     }
-  
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
+}
 
 
-.musictext{
+.musictext {
     margin-left: 10px;
 }
 
-#song-title{
+#song-title {
     font-size: 14px;
     word-wrap: break-word;
 }
 
-#artist{
+#artist {
     font-size: 14px;
 }
 
-.music{
+.music {
     display: flex;
     flex-direction: row;
     padding: 3px;
@@ -357,59 +365,57 @@ a{
     align-items: center;
 }
 
-.ipod-background{
+.ipod-background {
     /*===== Configurable Variables =====*/
-  /*======= Only these change! =======*/
-  --color: #1e1e1e;
-  --radius: 15%;
-  --elevation: 20px;
-  --bevel: 2px;
-  --angle: 224deg;
-  --intensity: 70;
-  --diffusion: 30;
+    /*======= Only these change! =======*/
+    --color: #1e1e1e;
+    --radius: 15%;
+    --elevation: 20px;
+    --bevel: 2px;
+    --angle: 224deg;
+    --intensity: 70;
+    --diffusion: 30;
 
-  /*======= Computed Variables =======*/
-  --sin: calc(sin(var(--angle)));
-  --cos: calc(cos(var(--angle)));
-  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
-  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
-  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
-  --edge-blur: calc(var(--bevel) * 1.5);
-  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+    /*======= Computed Variables =======*/
+    --sin: calc(sin(var(--angle)));
+    --cos: calc(cos(var(--angle)));
+    --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+    --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+    --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+    --edge-blur: calc(var(--bevel) * 1.5);
+    --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
 
-  /*======= Computed Properties =======*/
-  border-radius: var(--radius);
-  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
-  background: linear-gradient(
-    calc(var(--angle) + 90deg),
-    rgba(0, 0, 0, var(--surface-contrast)),
-    rgba(255, 255, 255, var(--surface-contrast))
-    ),
-    var(--color);
-  /*======== Static Properties ========*/
-  background-blend-mode: soft-light;
+    /*======= Computed Properties =======*/
+    border-radius: var(--radius);
+    box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+        0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+        inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+        inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+    background: linear-gradient(calc(var(--angle) + 90deg),
+            rgba(0, 0, 0, var(--surface-contrast)),
+            rgba(255, 255, 255, var(--surface-contrast))),
+        var(--color);
+    /*======== Static Properties ========*/
+    background-blend-mode: soft-light;
     height: 280px;
-    width:200px;
+    width: 200px;
     border-radius: 15px;
     border-style: none;
     margin: auto;
     padding-top: 5%;
 }
 
-.ipod-screen{
+.ipod-screen {
     background-color: rgb(208, 215, 221);
     height: 40%;
     width: 88%;
     margin: auto;
-    
+
 }
 
-.ipod-scrollwheel{
+.ipod-scrollwheel {
     height: 45%;
     margin-top: 20px;
     border-radius: 100%;
@@ -417,54 +423,60 @@ a{
 
 /* Container for the games */
 #game-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    max-width: 900px; /* Adjust based on your desired total width */
-    margin: 0 auto; /* Center the container */
+    background-image: url(images/bookshelf.png);
+    background-size: contain;
+    width: 352.8px;
+    height: 367.2px;
+    margin-top: 40px;
+    box-shadow: 0px 24px 16px -1px rgba(0, 0, 0, 0.5);
 }
 
-.game-row{
+
+
+.game-row {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.games{
+.games {
     flex: 1;
     border: #646464;
-    border-style: dotted;
     background-color: #00000022;
-    margin: 5px;
+    border-radius: 10px;
+    margin: 15px;
     align-items: center;
     text-align: center;
     word-wrap: break-word;
     padding: 10px;
-  }
-
-  .games{
-    text-decoration: none;
-    color: white;
-  }
-
-.logo{
-    width:40px;
 }
 
-.description h3{
+.games {
+    text-decoration: none;
+    color: white;
+}
+
+.games:hover{
+    background-color: #0000003a;
+    box-shadow: 0px 9px 12px 0px rgba(0,0,0,0.76);
+}
+
+.logo {
+    width: 40px;
+}
+
+.description h3 {
     font-size: 13px;
     margin: 0px;
 }
 
-#About{
+#About {
     text-align: center;
 }
 
-#About a{
+#About a {
     text-align: center;
-    color:rgb(190, 252, 255);
+    color: rgb(190, 252, 255);
 }
 
 /* bottom styles */
@@ -481,7 +493,7 @@ a{
     --angle: 270deg;
     --intensity: 50;
     --diffusion: 0;
-  
+
     /*======= Computed Variables =======*/
     --sin: calc(sin(var(--angle)));
     --cos: calc(cos(var(--angle)));
@@ -490,79 +502,88 @@ a{
     --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
     --edge-blur: calc(var(--bevel) * 1.5);
     --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
-  
+
     /*======= Computed Properties =======*/
     border-radius: var(--radius);
     box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
-      0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
-      inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
-      inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
-      inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
-      inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+        0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+        inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+        inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+        inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
     background-color: color-mix(in srgb, var(--color) var(--opacity), transparent calc(100% - var(--opacity)));
     backdrop-filter: blur(var(--blurriness));
-        
+
     /*======== Static Properties ========*/
     background-blend-mode: soft-light;
     position: relative;
-  
+
     /*====== Nested Pseudo-Element ======*/
     &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-      border-radius: var(--radius);
-      background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-      pointer-events: none; /* Allow clicks and text selection to pass through */
+        content: "";
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: var(--radius);
+        background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+        pointer-events: none;
+        /* Allow clicks and text selection to pass through */
     }
-  
+
     margin: 10px;
     padding: 10px;
-  }
+}
 
-.guestbook{
+.guestbook {
     text-align: center;
 }
 
 /* Mobile-specific styles */
 @media only screen and (max-width: 768px) {
-    .tab-content{
+    .tab-content {
         width: 80vw;
     }
 
     .container {
-        padding: 0; /* Remove padding for mobile */
-        margin: 0; /* Remove margin for mobile */
+        padding: 0;
+        /* Remove padding for mobile */
+        margin: 0;
+        /* Remove margin for mobile */
     }
 
     #middle {
         flex-direction: column;
-        align-items: center; /* Center flexboxes on mobile */
+        align-items: center;
+        /* Center flexboxes on mobile */
     }
 
 
     .title img {
-        width: 30vw; /* Adjusted for mobile */
+        width: 30vw;
+        /* Adjusted for mobile */
     }
 
     .side-bar {
-        width: 80vw; /* Adjusted for mobile */
+        width: 80vw;
+        /* Adjusted for mobile */
     }
 
-    .game-row{
+    .game-row {
         flex-direction: column;
     }
 
     .games {
-        flex: 1 1 100%; /* Adjusted for mobile */
+        flex: 1 1 100%;
+        /* Adjusted for mobile */
     }
 
     .tab button {
-        padding: 10px 20px; /* Adjusted for mobile */
-        font-size: 14px; /* Adjusted for mobile */
+        padding: 10px 20px;
+        /* Adjusted for mobile */
+        font-size: 14px;
+        /* Adjusted for mobile */
     }
 
     .musictext {
@@ -580,18 +601,40 @@ a{
     }
 
     #Welcome {
-        order: 2; /* Move #Welcome to the middle */
+        order: 2;
+        /* Move #Welcome to the middle */
     }
 
     #Games {
-        order: 1; /* Move #Games to the top */
+        order: 1;
+        /* Move #Games to the top */
     }
 
     #left-side-bar {
-        order: 4; /* Move left sidebar to the bottom */
+        order: 4;
+        /* Move left sidebar to the bottom */
     }
 
     #right-side-bar {
-        order: 3; /* Move right sidebar to the bottom */
+        order: 3;
+        /* Move right sidebar to the bottom */
     }
+
+    #game-container {
+        width: 250.24px;
+        height: 443px;
+    }
+
+    .game-row{
+        
+    }
+
+    .games {
+        margin: 1px;
+        padding: 11px;
+        align-items: center;
+        text-align: center;
+        word-wrap: break-word;
+    }
+    
 }

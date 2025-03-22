@@ -9,6 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css" />
     <script src="/tab.js"></script>
+    <script>
+      // Load the audio file
+const audio = new Audio('start.wav');
+
+// Select all buttons on the page
+const buttons = document.querySelectorAll('button');
+
+document.addEventListener('click', () => {
+    // Play the sound
+    audio.currentTime = 0; // Reset the audio to the start
+    audio.play();
+    console.log("Page clicked! Audio is playing.");
+});
+console.log("test");
+    </script>
   </head>
     <body onload="openTab(event, 'Welcome')">
     <div class="container">
@@ -49,7 +64,6 @@
           
 
           <div id="game-container">
-
             <div class="game-row">
             <a href="/games/tf2" class="games">
                 <img src="/images/tf2.png" alt="Team Fortress 2 Logo" class="logo">
