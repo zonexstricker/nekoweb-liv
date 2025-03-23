@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>olivia.nekoweb.org</title>
+  <link>https://olivia.nekoweb.org</link>
+  <description>Olivia's web-page</description>
+  <item>
+    <title>My thoughts on "vibe-coders"</title>
+    <category>Thoughts</category>
+    <link>https://olivia.nekoweb.org/blog/articles/thoughts/my-thoughts-on-vibe-coders/</link>
+    <description>Vibe-coding is the new thing to laugh at on programmer twitter.</description>
+  </item>
+  <item>
+    <title>I added RSS, whaaaat</title>
+    <category>Announcements</category>
+    <link>https://olivia.nekoweb.org</link>
+    <description>Added RSS to my website, insane</description>
+  </item>
+</channel>
+
+</rss> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liv's blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/blog/articles/article.css" />
+    <script>
+        // Wait for the document to be fully loaded before running the code
+    document.addEventListener("DOMContentLoaded", function() {
+      // Load the audio file (ensure the path is correct)
+      const audio = new Audio('/start.wav');
+      
+      // Get all elements with the class 'tablinks'
+      const tabLinks = document.querySelectorAll('.tablinks');
+      
+      // Add click event listener to each 'tablinks' element
+      tabLinks.forEach(tab => {
+        tab.addEventListener('click', function() {
+          // Play the sound when the tab is clicked
+          audio.play().catch(error => {
+            console.error("Error playing audio:", error);
+          });
+        });
+      });
+    });
+      </script>
+</head>
+<body>
+    <div class="container">
+        <div class="flex-row" id="top">
+
+            <div class="title">
+              <img src=/images/logo.webp>
+              <h1>Liv site</h1>
+            </div>
+    
+            <div class="tab">
+                <button class="tablinks" onclick="window.location.href = '/'">Return</button>
+            </div>
+    
+          </div>
+
+          <div class="flex-row" id="middle">
+            <div class="article">
+                <h1 id="title">My Thoughts on "Vibe-Coders"</h1>
+                <p class="meta" id="category">Thoughts</p>
+                <p class="meta" id="date">Sunday, 23 March, 2025 ☀️</p>
+                <h2>What is a "Vibe-Coder"?</h2>
+                <p>A vibe-coder is someone who has little-to-no knowledge about project development, programming, design, and user experience who uses AI tools that aim to provide a full project development process to build something for them.</p>
+                <p>I am not going to name tools to future-proof this article and also to not advertise them. But these tools are a massive feat of engineering. Being able to iterate and develop software or a service is an incredibly complex task. AI has come a long way in the past few years, but its user base hasn't matured.</p>
+                <h2>Why is This Bad?</h2>
+                <p>People using these tools to do <strong>everything</strong> for them fail to realise they aren't learning how it actually works. As everyone knows, LLMs constantly "hallucinate." You can make them believe anything you tell them, whether it be the truth or not. LLMs scrape data from online, which includes data from other LLMs. This poses issues with published errors being internalised into these machines. You cannot simply tell an LLM "this is wrong" and expect it to be able to fix something that it thinks is the most "optimal" solution.</p>
+                <p>I put "optimal" in heavy quotation marks because LLMs do not understand anything. All they are is advanced auto-fill. They don't think, and they cannot reason the same way a human can. Their existence is to just be a stream of consciousness that predicts what is the most likely word to follow another word. This is all based on what information was fed to it during training.</p>
+                <h2>What Issues Can This Cause?</h2>
+                <p>The users of these AI services do not understand the code that is given to them. So they fix bugs by asking the AI to fix it. LLMs are incapable of running the code themselves correctly. They can predict what the result of each line will be, but they don't actually compile the code and run it themselves. This means the fixes they give can be complete hallucinations only given to satisfy the question it is asked as close as it can.</p>
+                <p>This could cause data loss, financial damage, or the user breaching data-protection laws if the app is vulnerable to cyber-attacks.</p>
+                <p>A user on Twitter recently ran into this issue. They used a service to build their entire SaaS project. The AI did not correctly implement security measures, so people managed to bypass the implemented subscription service and added miscellaneous content to its internal database. This poses a myriad of issues and almost certainly jeopardises the security of the internal database, which might contain financial information of its users as it included the aforementioned subscription service!</p>
+                <p>Moreover, the user could not actually fix these problems. The only way they could fix this is by asking the AI tool to just "fix pls."</p>
+                <p>The average person is not going to be able to tell at face value that these services are AI-built. There are going to be lawsuits about how dangerous this all is, especially considering the right to a user's privacy.</p>
+                <h2>Conclusion</h2>
+                <p>I think these AI tools are fine to spit out simple code that's already available online. But considering it essentially steals from unsuspecting programmers anyway, I don't think AI should be your first option for help when programming anything. Building an entire service is a gross misuse of these tools, and for the tools to advertise themselves this way is blatant false advertisement. The users of these tools should put effort into doing things the "traditional" way; otherwise, I predict they will face a lot of legal repercussions.</p>
+            </div>
+          </div>
+
+    </div>
+</body>

@@ -166,11 +166,12 @@ a {
 }
 
 #Welcome,
-#About {
+#About,
+#Blog {
     /*===== Configurable Variables =====*/
     /*======= Only these change! =======*/
     --color: #272727;
-    --radius: 5%;
+    --radius: 4%;
     --elevation: 20px;
     --bevel: 2px;
     --opacity: 50%;
@@ -219,6 +220,7 @@ a {
 
     margin: 10px;
     padding: 10px;
+    border-radius: 16px;
 }
 
 .side-bar {
@@ -231,7 +233,7 @@ a {
     /*===== Configurable Variables =====*/
     /*======= Only these change! =======*/
     --color: #272727;
-    --radius: 5%;
+    --radius: 4%;
     --elevation: 20px;
     --bevel: 2px;
     --opacity: 50%;
@@ -283,13 +285,15 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 16px;
+
 }
 
 #right-side-bar {
     /*===== Configurable Variables =====*/
     /*======= Only these change! =======*/
     --color: #272727;
-    --radius: 5%;
+    --radius: 4%;
     --elevation: 20px;
     --bevel: 2px;
     --opacity: 50%;
@@ -340,6 +344,7 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 16px;
 }
 
 
@@ -369,7 +374,7 @@ a {
     /*===== Configurable Variables =====*/
     /*======= Only these change! =======*/
     --color: #1e1e1e;
-    --radius: 15%;
+    --radius: 4%;
     --elevation: 20px;
     --bevel: 2px;
     --angle: 224deg;
@@ -401,7 +406,7 @@ a {
     background-blend-mode: soft-light;
     height: 280px;
     width: 200px;
-    border-radius: 15px;
+    border-radius: 16px;
     border-style: none;
     margin: auto;
     padding-top: 5%;
@@ -480,13 +485,59 @@ a {
     color: rgb(190, 252, 255);
 }
 
+.item{ /* rss item */
+     /*===== Configurable Variables =====*/
+  /*======= Only these change! =======*/
+  --color: #141414;
+  --radius: 4%;
+  --elevation: 16px;
+  --bevel: 3.3px;
+  --angle: 270deg;
+  --intensity: 65;
+  --diffusion: 0;
+
+  /*======= Computed Variables =======*/
+  --sin: calc(sin(var(--angle)));
+  --cos: calc(cos(var(--angle)));
+  --x-displacement: calc(-1 * var(--cos) * (var(--elevation) + 1px));
+  --y-displacement: calc(-1 * var(--sin) * (var(--elevation) + 1px));
+  --edge-opacity: calc(var(--intensity) * 0.006 - var(--diffusion) * 0.002);
+  --edge-blur: calc(var(--bevel) * 1.5);
+  --surface-contrast: calc(var(--intensity) * 0.01 - var(--diffusion) * 0.005);
+
+  /*======= Computed Properties =======*/
+  border-radius: var(--radius);
+  box-shadow: var(--x-displacement) var(--y-displacement) calc(var(--diffusion) * 0.3px + (var(--elevation))) calc(var(--elevation) / 2) rgba(0, 0, 0, calc(var(--intensity) * 0.006)),
+    0px 0px calc(var(--diffusion) * 1.4px) rgba(255, 255, 255, calc(var(--intensity) * 0.004)),
+    inset calc(var(--bevel) * -1) 0 var(--edge-blur) hsla(100, 0%, calc((var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 var(--bevel) var(--edge-blur) hsla(100, 0%, calc((-1 * var(--sin) + 1) * 50%), var(--edge-opacity)),
+    inset var(--bevel) 0 var(--edge-blur) hsla(100, 0%, calc((-1 * var(--cos) + 1) * 50%), var(--edge-opacity)),
+    inset 0 calc(var(--bevel) * -1) var(--edge-blur) hsla(100, 0%, calc((var(--sin) + 1) * 50%), var(--edge-opacity));
+  background: linear-gradient(
+    calc(var(--angle) + 90deg),
+    rgba(0, 0, 0, var(--surface-contrast)),
+    rgba(255, 255, 255, var(--surface-contrast))
+    ),
+    var(--color);
+  /*======== Static Properties ========*/
+  background-blend-mode: soft-light;
+
+  border-radius: 16px;
+  padding:10px;
+  margin-bottom: 10px;
+}
+
+.item h2{
+    text-align: center;
+}
+
 /* bottom styles */
 
 .footnote {
     /*===== Configurable Variables =====*/
     /*======= Only these change! =======*/
     --color: #272727;
-    --radius: 20%;
+    --radius: 0%;
     --elevation: 20px;
     --bevel: 2px;
     --opacity: 50%;
